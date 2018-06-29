@@ -1,37 +1,36 @@
 <html>
-  <head>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript"></script>
-<script>
-function blah(meh) {
-    setTimeout(function(){
-        $(meh).animate({opacity: "0.4", /*fontSize: "26px",*/}, animationDelay);
-        $(meh).animate({opacity: "1", /*fontSize: "26px",*/}, animationDelay);
-    },$(meh).index() * offset)
-}
-function blahctual(meh) {
-    setTimeout(function(){
-        $(meh).animate({opacity: "0.4"}, animationDelay);
-        $(meh).animate({opacity: "1"}, animationDelay);
-    },$(meh).index() * offset)
-}
+	<script type="text/javascript">
+	function blah(meh) {
+		setTimeout(function(){
+			$(meh).animate({opacity: "0.4", /*fontSize: "26px",*/}, animationDelay);
+			$(meh).animate({opacity: "1", /*fontSize: "26px",*/}, animationDelay);
+		},$(meh).index() * offset)
+	}
+	function blahctual(meh) {
+		setTimeout(function(){
+			$(meh).animate({opacity: "0.4"}, animationDelay);
+			$(meh).animate({opacity: "1"}, animationDelay);
+		},$(meh).index() * offset)
+	}
 
-function loadlink(){
-    $('#listaoculta').load('song.txt',function () {
-		$(this).wrap();		
-    });
+	function loadlink(){
+		$('#listaoculta').load('song.txt',function () {
+			$(this).wrap();		
+		});
 
-    //$('#actual').load('currentsong.txt',function () {
-    //     $(this).wrap();
-    //});	
-}
- 	
-var animationDelay = 900;
-var offset = 300;	
-//loadlink(); // This will run on page load
+		//$('#actual').load('currentsong.txt',function () {
+		//     $(this).wrap();
+		//});	
+	}
+		
+	var animationDelay = 900;
+	var offset = 300;	
+	//loadlink(); // This will run on page load
 
 
-setInterval(function(){
+	setInterval(function(){
 		loadlink();
 		var	canciones = $('#listaoculta').text(); // Or .html, doesn't really matter with the input you showed
 		canciones = canciones.split("\n");
@@ -57,329 +56,330 @@ setInterval(function(){
 
 	}, 4900); // this will run after every 2 seconds
 
-</script>
-<style>
-body{
-	margin: 0px;
-	border: 0px;
-	padding: 0px;
-}
-div {
-	overflow: hidden !important;
-	white-space: nowrap;
-	text-overflow: ellipsis;
-	margin: 0px;
-	border: 0px;
-	padding: 0px;
-	
-}
-#titular {
-	margin: 0px;
-	padding: 0px;
-	background-color: #ff9900;
-	color: black;
-	font-family: Oswald Regular;
-	font-size: 30px;
-	font-style: normal;
-	font-weight: bold;
-	display:block;
-	padding-left: 10px;
-	padding-right: 10px;
-	border-top-right-radius: 25px;
-	border-bottom: 1px #666666 solid;
-	//text-overflow: clip;	
-
-}
-#actual {
-	display: inline; 
-	
-	max-width: 60%; 
-	margin: 0px;
-	padding: 0px;
-	overflow: hidden !important;
-	white-space: nowrap;
-	text-overflow: ellipsis;	
-}
-@keyframes marquee {
-  0% { left: 0; }
-  100% { left: -100%; }
-}
-
-#cabecera {
-	margin: 0px;
-	padding: 0px;
-	background-color: #cc7700;
-	color: black;
-	font-family: Oswald Regular;
-	font-size: 26px;
-	font-style: normal;
-	font-weight: normal;
-	display:block;
-	padding-right: 10px;
-}
-#listaoculta {visibility: hidden;}
-#listado{
-	margin: 0;
-	padding: 0px;
-	color: #ff9900;
-	font-family: Oswald Regular;
-	font-size: 26px;
-	font-style: normal;
-	font-weight: normal;
-	line-height: 34px;
-	padding-left: 10px;
-	padding-right: 10px;
-	background: #222222;
-	background-image: -webkit-linear-gradient(#333 50%, #202020 50%);
-	background-image:    -moz-linear-gradient(#333 50%, #202020 50%);
-	background-image:     -ms-linear-gradient(#333 50%, #202020 50%);
-	background-image:      -o-linear-gradient(#333 50%, #202020 50%);
-	background-image:         linear-gradient(#333 50%, #202020 50%);
-	background-position: 0 0;
-	background-repeat: repeat;
-	background-size: 69px 69px;
-	height: 100%;
-	border-bottom-right-radius: 25px;
-}
-.actual {
-    display: block;
-	font-size: 28px;
-	color: #ffffff;
+	</script>
+	<style>
+	body{
+		margin: 0px;
+		border: 0px;
+		padding: 0px;
+		background-color: rgba(0, 0, 0, 0);
 	}
-.cola {
-	color: #dd6600;
-	display: block;
-}
-.cola:nth-child(2) {
-	color: #dd7700;
-}
-#textofijocabecera {
-	min-width: 50%;
-	display: inline-block;
-	background-color: #cc7700;
-	border-right: 2px #666666 dotted;
-	padding-left: 10px;
-	margin-right: 5px;
-}
-#frame {
-	display: block;
-	min-width: 1920px;
-	min-height: 1080px; 
-	max-width: 1920px;
-	max-height: 1080px; 
-	width: 1920px;
-	height: 1080px; 
-	margin: 0px auto;
-	padding: 0px;
-	border: 0px solid;
-	background-color: rgba(0, 0, 0, 1);
-	position: relative;
-}
-
-
-#countdown {
-	margin: 0px;
-	padding: 0px;
-	background-color: #ff9900;
-	color: black;
-	font-family: Oswald Regular;
-	font-size: 30px;
-	font-style: normal;
-	font-weight: normal;
-	display:block;
-	padding-left: 10px;
-	padding-right: 25px;
-	padding-top: 0px;
-	padding-bottom: 0px;
-	border-top-right-radius: 25px;
-	border-bottom-right-radius: 25px;
-	max-width: 530px;
-	width: 530px;
-	max-height: 64px;
-	position: absolute;
-	top: 0px;
-}
-#thedamnevents{
-	display: block;
-	background-color: rgba(0, 0, 0, 0);
-	margin: 0px;
-	border: 0px;
-	padding: 0px;
-	overflow: hidden;
-	max-width: 550px;
-	max-height: 330px;
-	width: 402px;
-	height: 241px;	
-	position: absolute;
-	top: 44px;
-}
-#thedamnevents object{
-    zoom: -0.75;
-    -moz-transform: scale(0.75);
-    -moz-transform-origin: 0 0;
-    -o-transform: scale(0.75);
-    -o-transform-origin: 0 0;
-    -webkit-transform: scale(0.75);
-    -webkit-transform-origin: 0 0;
-    transform: scale(0.75); /* Standard Property */
-    transform-origin: 0 0;  /* Standard Property */
-	overflow: hidden;
-	width: 712px;
-	height: 341px;		
-
-}
-#thedamnchat{
-	display: block;
-	background-color: rgba(0, 0, 0, 0);
-	margin: 0px;
-	border: 0px;
-	padding: 0px;
-	overflow: hidden;
-	max-width: 550px;
-	max-height: 440px;
-	width: 550px;
-	height: 440px;
-	position: absolute;
-	top: 295px;
-}
-#songlist {
-	background-color: rgba(0, 0, 0, 0);
-	margin: 0px;
-	border: 0px;
-	padding: 0px;
-	overflow: hidden;
-	max-width: 550px;
-	max-height: 350px;
-	width: 550px;
-	height: 345px;	
-	position: absolute;
-	display: block;
-	top: 735px;
-
-}
-#datetimezone {
-	margin: 0px;
-	padding: 0px;
-	background-color: #ff9900;
-	color: black;
-	font-family: Oswald Regular;
-	font-size: 30px;
-	font-style: normal;
-	font-weight: normal;
-	display: inline-block;
-	padding-left: 10px;
-	padding-right: 10px;
-	border-top-right-radius: 25px;
-	border-bottom-right-radius: 25px;
-	position: absolute;
-	max-width: 450px;
-	max-height: 40px;	
-	width: 450px;
-	height: 40px;
-	top: 1030px;
-}
-
-#thedamnjar {	
-	display: block;
-	background-color: rgba(0, 0, 0, 0);
-	margin: 0px;
-	border: 0px;
-	padding: 0px;
-	overflow: hidden;
-	max-width: 240px;
-	max-height: 1085px;
-	width: 240px;
-	height: 1085px;
-	position: absolute;
-	left: 1680px;
-}
-#thedamnalertbox {	
-	display: block;
-	background-color: rgba(0, 0, 0, 0);
-	margin: 0px;
-	border: 0px;
-	padding: 0px;
-	overflow: hidden;
-	max-width: 240px;
-	max-height: 1040px;
-	width: 240px;
-	height: 1045px;
-	position: absolute;
-	left: 1680px;
-    opacity: 0.5;
-    filter: alpha(opacity=50); /* For IE8 and earlier */	
-}
-#thedamncat {
-	display: block;
-	background-color: rgba(0, 0, 0, 0);
-	margin: 0px;
-	border: 0px;
-	padding: 0px;
-	overflow: hidden;
-	max-width: 240px;
-	max-height: 210px;
-	width: 240px;
-	height: 210px;
-	position: absolute;
-	left: 1680px;
-	top: 815px;
-}
-#thedamdonationbar{
-	display: block;
-	background-color: #ff9900;
-	margin: 0px;
-	border: 0px;
-	padding: 0px;
-	overflow: hidden!important;
-	max-width: 1100px;
-	max-height: 40px;
-	width: 1100px;
-	height: 40px;
-	position: absolute;
-	border-top-left-radius: 25px;
-	border-bottom-left-radius: 25px;	
-	border-top-right-radius: 5px;
-	border-bottom-right-radius: 5px;
-	left: 500px;
-	top: 1030px;	
+	div {
+		overflow: hidden !important;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		margin: 0px;
+		border: 0px;
+		padding: 0px;
 	}
-#thestatusbar{
-	display: block;
-	background-color: #bb7700;
-	margin: 0px;
-	border: 0px;
-	padding: 0px;
-	overflow: hidden!important;
-	max-width: 1920px;
-	max-height: 50px;
-	width: 1920px;
-	height: 50px;
-	position: absolute;	
-	left: 0px;
-	top: 1025px;	
+	#frame {
+		display: block;
+		min-width: 1920px;
+		min-height: 1080px; 
+		max-width: 1920px;
+		max-height: 1080px; 
+		width: 1920px;
+		height: 1080px; 
+		margin: 0px auto;
+		padding: 0px;
+		border: 0px solid;
+		background-color: rgba(0, 0, 0, 0);
+		position: relative;
 	}
-#thedamfollowers	{
-	display: block;
-	background-color: #ff9900;
-	margin: 0px;
-	border: 0px;
-	padding: 0px;
-	overflow: hidden!important;
-	max-width: 310px;
-	max-height: 40px;
-	width: 310px;
-	height: 40px;
-	position: absolute;
-	left: 1610px;
-	top: 1030px;
-	font-family: Oswald Regular;
-	font-size: 30px;
-	font-style: normal;
-	font-weight: normal;
-	border-top-left-radius: 5px;
-	border-bottom-left-radius: 5px;		
+
+
+	#titular {
+		margin: 0px;
+		padding: 0px;
+		background-color: #ff9900;
+		color: black;
+		font-family: Oswald Regular;
+		font-size: 30px;
+		font-style: normal;
+		font-weight: bold;
+		display:block;
+		padding-left: 10px;
+		padding-right: 10px;
+		border-top-right-radius: 25px;
+		border-bottom: 1px #666666 solid;
+		//text-overflow: clip;	
+
 	}
-</style>
+	#actual {
+		display: inline; 
+		max-width: 60%; 
+		margin: 0px;
+		padding: 0px;
+		overflow: hidden !important;
+		white-space: nowrap;
+		text-overflow: ellipsis;	
+	}
+	@keyframes marquee {
+	  0% { left: 0; }
+	  100% { left: -100%; }
+	}
+
+	#cabecera {
+		margin: 0px;
+		padding: 0px;
+		background-color: #cc7700;
+		color: black;
+		font-family: Oswald Regular;
+		font-size: 26px;
+		font-style: normal;
+		font-weight: normal;
+		display:block;
+		padding-right: 10px;
+	}
+	#listaoculta {visibility: hidden;}
+	#listado{
+		margin: 0;
+		padding: 0px;
+		color: #ff9900;
+		font-family: Oswald Regular;
+		font-size: 26px;
+		font-style: normal;
+		font-weight: normal;
+		line-height: 34px;
+		padding-left: 10px;
+		padding-right: 10px;
+		background: #222222;
+		background-image: -webkit-linear-gradient(#333 50%, #202020 50%);
+		background-image:    -moz-linear-gradient(#333 50%, #202020 50%);
+		background-image:     -ms-linear-gradient(#333 50%, #202020 50%);
+		background-image:      -o-linear-gradient(#333 50%, #202020 50%);
+		background-image:         linear-gradient(#333 50%, #202020 50%);
+		background-position: 0 0;
+		background-repeat: repeat;
+		background-size: 69px 69px;
+		height: 100%;
+		border-bottom-right-radius: 25px;
+	}
+	.actual {
+		display: block;
+		font-size: 28px;
+		color: #ffffff;
+		}
+	.cola {
+		color: #dd6600;
+		display: block;
+	}
+	.cola:nth-child(2) {
+		color: #dd7700;
+	}
+	#textofijocabecera {
+		min-width: 50%;
+		display: inline-block;
+		background-color: #cc7700;
+		border-right: 2px #666666 dotted;
+		padding-left: 10px;
+		margin-right: 5px;
+	}
+	#countdown {
+		margin: 0px;
+		padding: 0px;
+		background-color: #ff9900;
+		color: black;
+		font-family: Oswald Regular;
+		font-size: 30px;
+		font-style: normal;
+		font-weight: normal;
+		display:block;
+		padding-left: 10px;
+		padding-right: 25px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		border-top-right-radius: 25px;
+		border-bottom-right-radius: 25px;
+		max-width: 530px;
+		width: 530px;
+		max-height: 64px;
+		position: absolute;
+		top: 0px;
+	}
+	#thedamnevents{
+		display: block;
+		background-color: rgba(0, 0, 0, 0);
+		margin: 0px;
+		border: 0px;
+		padding: 0px;
+		overflow: hidden;
+		max-width: 550px;
+		max-height: 330px;
+		width: 402px;
+		height: 241px;	
+		position: absolute;
+		top: 44px;
+	}
+	#thedamnevents object{
+		zoom: -0.75;
+		-moz-transform: scale(0.75);
+		-moz-transform-origin: 0 0;
+		-o-transform: scale(0.75);
+		-o-transform-origin: 0 0;
+		-webkit-transform: scale(0.75);
+		-webkit-transform-origin: 0 0;
+		transform: scale(0.75); /* Standard Property */
+		transform-origin: 0 0;  /* Standard Property */
+		overflow: hidden;
+		width: 712px;
+		height: 341px;		
+
+	}
+	#thedamnchat{
+		display: block;
+		background-color: rgba(0, 0, 0, 0);
+		margin: 0px;
+		border: 0px;
+		padding: 0px;
+		overflow: hidden;
+		max-width: 550px;
+		max-height: 440px;
+		width: 550px;
+		height: 440px;
+		position: absolute;
+		top: 295px;
+	}
+	#songlist {
+		background-color: rgba(0, 0, 0, 0);
+		margin: 0px;
+		border: 0px;
+		padding: 0px;
+		overflow: hidden;
+		max-width: 550px;
+		max-height: 350px;
+		width: 550px;
+		height: 345px;	
+		position: absolute;
+		display: block;
+		top: 735px;
+		opacity: 0.75;
+	}
+	#datetimezone {
+		margin: 0px;
+		padding: 0px;
+		background-color: #ff9900;
+		color: black;
+		font-family: Oswald Regular;
+		font-size: 30px;
+		font-style: normal;
+		font-weight: normal;
+		display: inline-block;
+		padding-left: 10px;
+		padding-right: 10px;
+		border-top-right-radius: 25px;
+		border-bottom-right-radius: 25px;
+		position: absolute;
+		max-width: 450px;
+		max-height: 40px;	
+		width: 450px;
+		height: 40px;
+		top: 1030px;
+		text-overflow: hidden;	
+		overflow: hidden;
+	}
+
+	#thedamnjar {	
+		display: block;
+		background-color: rgba(0, 0, 0, 0);
+		margin: 0px;
+		border: 0px;
+		padding: 0px;
+		overflow: hidden;
+		max-width: 240px;
+		max-height: 1085px;
+		width: 240px;
+		height: 1085px;
+		position: absolute;
+		left: 1680px;
+	}
+	#thedamnalertbox {	
+		display: block;
+		background-color: rgba(0, 0, 0, 0);
+		margin: 0px;
+		border: 0px;
+		padding: 0px;
+		overflow: hidden;
+		max-width: 240px;
+		max-height: 1040px;
+		width: 240px;
+		height: 1045px;
+		position: absolute;
+		left: 1680px;
+		opacity: 0.5;
+		filter: alpha(opacity=50); /* For IE8 and earlier */	
+	}
+	#thedamncat {
+		display: block;
+		background-color: rgba(0, 0, 0, 0);
+		margin: 0px;
+		border: 0px;
+		padding: 0px;
+		overflow: hidden;
+		max-width: 240px;
+		max-height: 210px;
+		width: 240px;
+		height: 210px;
+		position: absolute;
+		left: 1680px;
+		top: 815px;
+	}
+	#thedamdonationbar{
+		display: block;
+		background-color: #ff9900;
+		margin: 0px;
+		border: 0px;
+		padding: 0px;
+		overflow: hidden!important;
+		max-width: 1100px;
+		max-height: 40px;
+		width: 1100px;
+		height: 40px;
+		position: absolute;
+		border-top-left-radius: 25px;
+		border-bottom-left-radius: 25px;	
+		border-top-right-radius: 5px;
+		border-bottom-right-radius: 5px;
+		left: 500px;
+		top: 1030px;	
+		}
+	#thestatusbar{
+		display: block;
+		background-color: #bb7700;
+		margin: 0px;
+		border: 0px;
+		padding: 0px;
+		overflow: hidden!important;
+		max-width: 1920px;
+		max-height: 50px;
+		width: 1920px;
+		height: 50px;
+		position: absolute;	
+		left: 0px;
+		top: 1025px;	
+		}
+	#thedamfollowers	{
+		display: block;
+		background-color: #ff9900;
+		margin: 0px;
+		border: 0px;
+		padding: 0px;
+		overflow: hidden!important;
+		max-width: 310px;
+		max-height: 40px;
+		width: 310px;
+		height: 40px;
+		position: absolute;
+		left: 1610px;
+		top: 1030px;
+		font-family: Oswald Regular;
+		font-size: 30px;
+		font-style: normal;
+		font-weight: normal;
+		border-top-left-radius: 5px;
+		border-bottom-left-radius: 5px;		
+		}
+	</style>
 </head>
 <body>
 	<div id="frame">
@@ -389,7 +389,8 @@ div {
 		</div>							  
 		<div id="thedamnchat">
 			<object type="text/html" data="https://streamlabs.com/widgets/chat-box/v1/373DBD28C4966F6117DE" style="width: 100%; height: 100%"></object>
-		</div>		
+		</div>
+		<div id="thestatusbar"></div>		
 		<div id="songlist">
 		  <div id="titular">Current song: <div id="actual"></div></div>
 		  <div id="cabecera"><span id="textofijocabecera">Song queue &#8628;</span> <span id="comandos"> Commands: !songlist, !sr</span></div>
@@ -403,7 +404,6 @@ div {
 			<object type="text/html" data="https://streamlabs.com/widgets/tip-jar/v1/373DBD28C4966F6117DE" style="width: 100%; height: 100%"></object>
 		</div>
 		<div id="thedamncat"><img src="https://uploads.twitchalerts.com/000/145/591/668/paperjar-smlwider.png" /></div>
-		<div id="thestatusbar"></div>
 		<div id="datetimezone" lang="en">Date time zone</div>
 		<div id="thedamdonationbar" lang="en">
 			<object type="text/html" data="https://streamlabs.com/widgets/donation-ticker?token=373DBD28C4966F6117DE" style="width: 100%; "></object>
@@ -412,7 +412,7 @@ div {
 			<object type="text/html" data="https://streamlabs.com/widgets/follower-goal?token=373DBD28C4966F6117DE" style="width: 100%; "></object>
 		</div>
 	</div>
-	<script>
+	<script type="text/javascript">
 	// Set the date we're counting down to
 	var today = new Date();
 	var countDownDate = new Date(today.getFullYear(), today.getMonth(), today.getDate(), 23, 30, 00);
@@ -443,7 +443,7 @@ div {
 	}, 1000);
 	</script>	
 
-	<script>
+	<script type="text/javascript">
 	setInterval(function(){
 		document.getElementById("datetimezone").innerHTML = Date().replace('\(Hora de verano romance\)','');
 	}, 1000);
